@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Edad_Mascota</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		h1{
+			background-color: #eb5534;
+			color: #cfc9c8;
+			text-align: center;
+			padding: 20px;
+		}
+		.res{
+			padding: 10px;
+			margin: 10px;
+			color: #1f1918;
+			font-size: 20px;
+			text-align: center;
+		}
+
+		#edad_m, #edad_real{
+			padding: 15px;
+			font-size: 1.2em;
+		}
+
+		#edad_p {
+			font-size: 1.5em;
+		}
+		#btn {
+			margin-top: 20px;
+			font-size: 1em;
+		}
+
+		figure {
+			max-width: 500px;
+			margin: auto;
+			text-align: center;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			border: 5px solid black;
+			grid-gap: 20px;
+		}
+
+		.img {
+			background-color: #262626;
+			width: 100%;
+		}
+
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Edad de mi mascota</h1>
+	</header>
+	<section class="res">
+		<figure>
+			<img src="img/loki.jpeg" class="img" alt="loki">
+			<img src="img/duck.jpeg" class="img" alt="duck">
+			<figcaption>LOKI</figcaption>
+			<figcaption>DUCK</figcaption>
+		</figure>
+		<br>
+		<input type="number" id="edad_p" placeholder="Edad">
+
+		<br>
+		
+		<button id="btn">Calcular</button>
+		<br><br><br>
+	    <h2>Edad Mito:</h2>
+		<div id="edad_m"></div>
+
+		<h2>Edad Real:</h2>
+		<div id="edad_real"></div>
+
+		<script>
+			var b=document.getElementById('btn');
+			b.addEventListener('click',edad_mito);
+			var b=document.getElementById('btn');
+			b.addEventListener('click',edad_real);
+			
+			function edad_mito() {
+				var n1=parseInt(document.getElementById('edad_p').value);
+				
+				var edad=n1*7;
+
+				document.getElementById("edad_m").innerHTML = edad+" años"
+			}
+
+			function edad_real() {
+				var n1=parseInt(document.getElementById('edad_p').value);
+
+				var e=2.7182818281;
+
+				var edad=parseInt((16*Math.log(n1,e))+31);
+
+				document.getElementById("edad_real").innerHTML = edad+" años"
+			}
+		</script>
+
+	</section>
+</body>
+
+</html>
